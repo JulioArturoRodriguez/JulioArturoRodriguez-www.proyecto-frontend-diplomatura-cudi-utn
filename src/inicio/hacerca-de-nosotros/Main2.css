@@ -1,0 +1,152 @@
+/* Establecer estilo general para la página */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fa;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para el contenedor principal */
+.containerhacer{
+  max-width: 100%; /* Aprovechar todo el ancho disponible */
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Estilos para la fila que contiene los productos */
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas por defecto */
+  gap: 2rem; /* Espacio entre las columnas en rem */
+  margin-bottom: 4rem;
+}
+
+/* Para pantallas medianas y grandes */
+@media (min-width: 768px) {
+  .row {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+  }
+}
+
+@media (min-width: 1200px) {
+  .row {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas grandes */
+  }
+}
+
+/* Tarjetas de productos */
+.product-card {
+  background-color: white;
+  border: 0.125rem solid #00bcd4; /* Borde celeste azulado */
+  border-radius: 0; /* Sin esquinas redondeadas */
+  overflow: hidden; /* Para asegurarse que la imagen se recorte si se expande */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  width: 100%;
+  height: 25rem; /* Aumentamos la altura de las tarjetas */
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1200px) {
+  .product-card {
+    height: 30rem; /* Las tarjetas son más grandes en pantallas grandes */
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 576px) {
+  .product-card {
+    height: 18rem; /* Tarjetas más pequeñas en pantallas móviles */
+  }
+}
+
+.product-card:hover {
+  background-color: #f0faff; /* Cambiar color de fondo al pasar el ratón */
+  transform: scale(1.05); /* Aumentar el tamaño del cuadro */
+}
+
+.product-image {
+  width: 100%;
+  height: 100%; /* Hacemos que la imagen ocupe todo el espacio disponible */
+  object-fit: cover; /* Cubrir completamente el área sin distorsionar la imagen */
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.1); /* Aumentar el tamaño de la imagen */
+}
+
+.product-card .card-body {
+  padding: 1.5rem;
+  text-align: center;
+  position: absolute; /* Posicionamos el texto sobre la imagen */
+  bottom: 0; /* Pegado al fondo */
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente para mejorar la legibilidad */
+}
+
+.product-card .card-title {
+  font-size: 1.2rem; /* Usar rem */
+  font-weight: bold;
+}
+
+.product-card .card-text {
+  font-size: 1rem; /* Usar rem */
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  margin-top: 1rem; /* Usar rem */
+}
+
+/* Estilo del botón del carrito */
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  background-color: #00bcd4; /* Color de fondo al pasar por encima */
+  color: white;
+}
+
+/* Estilos para la tabla del carrito */
+.table {
+  background-color: white;
+  border-radius: 0.5rem; /* Usar rem */
+  border: 0.0625rem solid #ddd; /* Usar rem */
+}
+
+.table th, .table td {
+  text-align: center;
+  padding: 1rem; /* Usar rem */
+}
+
+.table th {
+  background-color: #00bcd4;
+  color: white;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.table td button {
+  margin: 0;
+  font-size: 1rem; /* Usar rem */
+}
+
+/* Estilo para el mensaje de compra exitosa */
+.alert-success {
+  background-color: #00bcd4;
+  color: white;
+  font-size: 1.2rem; /* Usar rem */
+  padding: 1rem; /* Usar rem */
+  border-radius: 0.5rem; /* Usar rem */
+}
